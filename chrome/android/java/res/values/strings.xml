@@ -58,7 +58,7 @@
 
     <string name="contextual_menu_open_in_external_application">Open in external application</string>
 
-    <string name="preferences_restart_is_needed">Your changes will take effect on restart of Kiwi</string>
+    <string name="preferences_restart_is_needed">Your changes will take effect on restart of Unremarkable</string>
     <string name="preferences_restart_now">RESTART NOW</string>
     <string name="preferences_restart_later">Later</string>
 
@@ -94,4 +94,3 @@
 
     <string name="main_menu_mobile_site">Mobile site</string>
 </resources>
-
