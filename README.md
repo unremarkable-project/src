@@ -101,7 +101,7 @@ Create a directory called ~/chromium/, and in ~/chromium/ run:
 git clone https://github.com/kiwibrowser/dependencies.git .cipd
 cp ~/chromium/.cipd/.gclient ~/chromium/
 cp ~/chromium/.cipd/.gclient_entries ~/chromium/
-git clone https://github.com/kiwibrowser/src.git
+git clone https://github.com/unremarkable-project/src.git
 ```
 
 At this stage, in ~/chromium/ you will have the .cipd folder, and a folder with the Kiwi Browser source-code called src.
