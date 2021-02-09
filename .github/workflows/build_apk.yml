@@ -332,10 +332,12 @@ jobs:
 
       - name: Creating release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v1.1.4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
+          owner: "kiwibrowser"
+          repo: "src"
           tag_name: ${{ github.run_id }}
           release_name: Generation ${{ github.run_id }}
           draft: false
@@ -407,7 +409,7 @@ jobs:
       - name: Uploading APK into GitHub release (arm)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-arm/ChromePublic.apk
@@ -417,7 +419,7 @@ jobs:
       - name: Uploading APK into GitHub release (arm64)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-arm64/ChromePublic.apk
@@ -427,7 +429,7 @@ jobs:
       - name: Uploading APK into GitHub release (x86)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-x86/ChromePublic.apk
@@ -437,7 +439,7 @@ jobs:
       - name: Uploading APK into GitHub release (x64)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-x64/ChromePublic.apk
@@ -447,7 +449,7 @@ jobs:
       - name: Uploading mapping file into GitHub release (arm)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-arm/ChromePublic.apk.mapping
@@ -457,7 +459,7 @@ jobs:
       - name: Uploading mapping file into GitHub release (arm64)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-arm64/ChromePublic.apk.mapping
@@ -467,7 +469,7 @@ jobs:
       - name: Uploading mapping file into GitHub release (x86)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-x86/ChromePublic.apk.mapping
@@ -477,7 +479,7 @@ jobs:
       - name: Uploading mapping file into GitHub release (x64)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-x64/ChromePublic.apk.mapping
@@ -487,7 +489,7 @@ jobs:
       - name: Uploading native mapping file into GitHub release (arm)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-arm/ChromePublic.native.mapping.tar.gz
@@ -497,7 +499,7 @@ jobs:
       - name: Uploading native mapping file into GitHub release (arm64)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-arm64/ChromePublic.native.mapping.tar.gz
@@ -507,7 +509,7 @@ jobs:
       - name: Uploading native mapping file into GitHub release (x86)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-x86/ChromePublic.native.mapping.tar.gz
@@ -517,7 +519,7 @@ jobs:
       - name: Uploading native mapping file into GitHub release (x64)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-x64/ChromePublic.native.mapping.tar.gz
@@ -558,7 +560,7 @@ jobs:
         if: ${{ github.repository_owner == 'kiwibrowser' }}
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-arm/ChromePublic-DevSigned.apk
@@ -569,7 +571,7 @@ jobs:
         if: ${{ github.repository_owner == 'kiwibrowser' }}
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-arm64/ChromePublic-DevSigned.apk
@@ -580,7 +582,7 @@ jobs:
         if: ${{ github.repository_owner == 'kiwibrowser' }}
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-x86/ChromePublic-DevSigned.apk
@@ -591,7 +593,7 @@ jobs:
         if: ${{ github.repository_owner == 'kiwibrowser' }}
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./apk-x64/ChromePublic-DevSigned.apk
